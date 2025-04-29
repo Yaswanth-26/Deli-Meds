@@ -98,16 +98,6 @@ The implementation follows a systematic approach:
    - Performed data extraction, transformation, and visualization
    - Generated insights through statistical analysis
 
-## Example Visualizations
-
-The Python integration enables powerful data analysis and visualization capabilities. Here are some examples of insights generated from the database:
-
-![Top Pharmacies by Order Count](python/results/top_pharmacies.png)
-
-![Customer Spending Analysis](python/results/top_customers_spending.png)
-
-![Cart Conversion Rate](python/results/cart_conversion.png)
-
 ## Setup Instructions
 
 ### Prerequisites
