@@ -158,8 +158,8 @@ The project demonstrates several important aspects of database design and implem
 4. **Integration Flexibility**: Python can effectively work with both systems through appropriate libraries
 
 ## Contributors
-- Yaswanth Reddy Nalamalapu (nalamalapu.y@northeastern.edu)
-- Venkata Mani Sivasai Shanmukha Goparaju (goparaju.v@northeastern.edu)
+- Yaswanth Reddy Nalamalapu
+- Venkata Mani Sivasai Shanmukha Goparaju
 
 ## License
 This project is academic work completed for IE 6700 Data Management for Analytics at Northeastern University.
