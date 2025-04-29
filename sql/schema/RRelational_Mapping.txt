@@ -1,0 +1,121 @@
+Mapping Conceptual Model to Relational Model: (Primary Key – Underlined,        Foreign Key- Italicized )
+
+
+
+Customer (Customer_ID, Customer_Firstname, Customer_Lastname, Customer_StreetAdress, Customer_City, Customer_ZipCode, Customer_Phone, Customer_email, Customer_Password) 
+              Primary Key: Customer_ID 
+              Unique Keys: Customer_Phone, Customer_email, Customer_Password 
+
+
+Review (Customer_ID, Review_Number, Comment)  
+              Primary Key: Customer_ID, Review_Number (Combination of Both) 
+              Foreign Key: Customer_ID 
+              Customer_ID is NOT NULL (References Customer Table) 
+              Here Review is a weak entity of Customer 
+
+
+Doctor (Doctor_SSN, Doctor_Name, Specialty)  
+              Primary Key: SSN 
+
+
+Cart (Cart_ID, Pharmacy_ID, Order_ID)  
+              Primary Key:  Cart_ID 
+              Foreign Keys: Pharmacy_ID, Order_ID  
+              Pharmacy_ID is NOT NULL (References Pharmacy Table), Order_ID is NULL Allowed (References Order Table)
+
+
+Prescription (Customer_ID, Doctor_SSN, Cart_ID, Prescription_Date)  
+              Primary Key:  Customer_ID, Doctor_SSN, Cart_ID (Combination of all Three) 
+              Foreign Keys: Customer_ID, Doctor_SSN, Cart_ID 
+              Customer_ID (References Customer Table), Doctor_SSN (References Doctor Table), Cart_ID (References Cart Table) are all NOT NULL 
+              Here Prescription is a Ternary Relationship between Cart, Doctor & Customer  
+
+
+Pharmacy (Pharmacy _ID, Pharmacy_Name, Pharmacy_Phone, Pharmacy_Location, Pharmacy_StreetAdress, Pharmacy_City, Pharmacy_ZipCode) 
+            Primary Key: Pharmacy_ID (Can be called as a Surrogate Key) 
+            Here Pharmacy is formed as a (Union & Partial) Categorization of Medicine, Service, & Product Entities 
+
+
+Pharmacy_Phone (Pharmacy_Phnr, Pharmacy_ID) 
+               Primary Key: Pharmacy_Phnr 
+
+
+Medicine (Medicine_ID, Pharmacy_ID, Medicine_Name, Medicine_Price) 
+               Primary Key: Medicine_ID 
+               Foreign Key: Pharmacy_ID 
+               Pharmacy_ID is NOT NULL (References Pharmacy Table) 
+
+
+Service (Service_ID, Pharmacy_ID, Service_Type, Service_Description, Service_Price)  
+              Primary Key: Service_ID 
+              Foreign Key: Pharmacy_ID 
+              Pharmacy_ID is NOT NULL (References Pharmacy Table) 
+
+
+Product (Product_ID, Pharmacy_ID, Product_Name, Product_Price)  
+             Primary Key: Product_ID 
+             Foreign Key: Pharmacy_ID  
+             Pharmacy_ID is NOT NULL (References Pharmacy Table 
+
+                                      
+Order (Order_ID, Customer_ID, Order_Date) 
+            Primary Key: Order_ID 
+            Foreign key:  Customer_ID 
+            Customer_ID is NOT NULL (References Customer Table) 
+
+                                      
+Order_Details (OD_ID, Order_ID, Total_Price, Quantity, Discount)  
+             Primary Key: OD_ID 
+             Foreign Key:  Order_ID 
+             Order_ID is NOT NULL (References Order Table) 
+
+                                      
+Payment (Payment_ID, Order_ID, Customer_ID, Amount, Payment_Date) 
+             Primary Key: Payment_ID 
+             Foreign Keys: Order_ID, Customer_ID 
+             Order_ID (References Order Table), Customer_ID (References Customer Table) are NOT NULL 
+
+                                      
+Admin (Admin_ID, Admin_Name, Admin_email, Admin_Password, Admin_Phone) 
+             Primary Key: Admin_ID 
+             Unique Keys: Admin_email, Admin_Password, Admin_Phone 
+
+                                      
+Offer (Offer_ID, Admin_ID, Offer_Code, Offer_Details) 
+             Primary Key: Offer_ID 
+             Foreign Key: Admin_ID 
+             Admin_ID is NOT NULL (References Admin table) 
+
+                                      
+Gives_Offer (Pharmacy_ID, Offer_ID) 
+             Primary Key: Pharmacy_ID, Offer_ID (Combination of Both) 
+             Foreign Keys: Pharmacy_ID, Offer_ID 
+             Pharmacy_ID (References Pharmacy Table), Offer_ID (References Offer Table) are NOT NULL 
+
+                                      
+Staff (Staff_ID, Admin_ID, Staff_SSN, Staff_Name, Staff_Department, Staff_email, Staff_Phone) 
+             Primary Key: Staff_ID 
+             Foreign Key: Admin_ID 
+             Admin_ID is NOT NULL (References Admin table) 
+             Unique Keys: Staff_SSN, Staff_email, Staff_Phone 
+             Here Staff table has specialization (Partial & Disjoint) with Customer_Care & Delivery_Person as its subclass 
+
+                                      
+Query (Query_ID, Query_Date, Query_Details) 
+             Primary Key: Query_ID 
+
+                                      
+Interaction (Staff_ID, Customer_ID, Query_ID, Interaction_Duration) 
+             Primary Key: Staff_ID, Customer_ID (Combination of Both) 
+             Foreign Keys: Query_ID, Staff_ID, Customer_ID 
+             Query_ID (References Query Table), Staff_ID (References Staff Table),   Customer_ID (References Customer Table) are all NOT NULL 
+             Here Interaction is an Aggregation Between Customer & Staff which is in relation with Query 
+
+                                      
+Delivery (Staff_ID, Pharmacy_ID, Order_ID, Delivery_Duration, Delivery_Date) 
+             Primary Key: Staff_ID, Pharmacy_ID, Order_ID (Combination of all Three) 
+             Foreign Keys: Staff_ID, Pharmacy_ID, Order_ID 
+             Staff_ID (References Staff Table), Pharmacy_ID (References Pharmacy Table), Order_ID 
+                                      
+(References Order Table), are all NOT NULL 
+             Here Delivery is a ternary Relation between Order, Pharmacy, Staff
