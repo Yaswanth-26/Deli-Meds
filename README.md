@@ -14,6 +14,23 @@ This project explores database design and implementation through the development
 
 The conceptual model diagrams (EER and UML) can be found in the `conceptual_model/` directory, showing the relationships between entities such as Customers, Doctors, Pharmacies, Orders, and more. The relational mapping derived from these models is implemented in the SQL schema, which can be referenced in the `sql/schema/` folder.
 
+## Conceptual Models
+
+### Entity-Relationship Diagram (EER)
+The EER diagram models the relationships between entities in the Deli-Meds system:
+
+![Entity-Relationship Diagram](conceptual_Models/ER Download.jpg)
+![Entity-Relationship Diagram](conceptual_Models/MySQL EER.png)
+
+This diagram shows the key entities such as Customer, Doctor, Pharmacy, and Order, along with their relationships and cardinality constraints.
+
+### UML Class Diagram
+The UML class diagram represents the object-oriented view of the system:
+
+![UML Class Diagram](conceptual_model/UML E.jpg)
+
+This diagram depicts the classes, their attributes, methods, and relationships in an object-oriented paradigm.
+
 ## Project Methodology & Comparative Study
 
 This project serves as a comparative study between SQL and NoSQL database approaches for the same domain:
@@ -79,6 +96,16 @@ The implementation follows a systematic approach:
    - Performed data extraction, transformation, and visualization
    - Generated insights through statistical analysis
 
+## Example Visualizations
+
+The Python integration enables powerful data analysis and visualization capabilities. Here are some examples of insights generated from the database:
+
+![Top Pharmacies by Order Count](python/results/top_pharmacies.png)
+
+![Customer Spending Analysis](python/results/top_customers_spending.png)
+
+![Cart Conversion Rate](python/results/cart_conversion.png)
+
 ## Setup Instructions
 
 ### Prerequisites
@@ -129,9 +156,8 @@ The project demonstrates several important aspects of database design and implem
 4. **Integration Flexibility**: Python can effectively work with both systems through appropriate libraries
 
 ## Contributors
-- Yaswanth Reddy Nalamalapu
-- Venkata Mani Sivasai Shanmukha Goparaju
+- Yaswanth Reddy Nalamalapu (nalamalapu.y@northeastern.edu)
+- Venkata Mani Sivasai Shanmukha Goparaju (goparaju.v@northeastern.edu)
 
 ## License
 This project is academic work completed for IE 6700 Data Management for Analytics at Northeastern University.
-
