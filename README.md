@@ -19,15 +19,17 @@ The conceptual model diagrams (EER and UML) can be found in the `conceptual_mode
 ### Entity-Relationship Diagram (EER)
 The EER diagram models the relationships between entities in the Deli-Meds system:
 
-conceptual_Models/ER Download.jpg
-![Entity-Relationship Diagram](conceptual_Models/MySQL EER.png)
+![ER Download](https://github.com/user-attachments/assets/1c8f65da-7617-4ffd-9494-cd4cfb7a07d3)
+
+![MySQL EER](https://github.com/user-attachments/assets/310b73be-b1cb-49b4-8929-32cb5175055f)
+
 
 This diagram shows the key entities such as Customer, Doctor, Pharmacy, and Order, along with their relationships and cardinality constraints.
 
 ### UML Class Diagram
 The UML class diagram represents the object-oriented view of the system:
 
-![UML Class Diagram](conceptual_model/UML E.jpg)
+![UML E](https://github.com/user-attachments/assets/93451e4f-32ae-44f5-86ea-1bb87f28adef)
 
 This diagram depicts the classes, their attributes, methods, and relationships in an object-oriented paradigm.
 
