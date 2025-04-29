@@ -19,7 +19,7 @@ The conceptual model diagrams (EER and UML) can be found in the `conceptual_mode
 ### Entity-Relationship Diagram (EER)
 The EER diagram models the relationships between entities in the Deli-Meds system:
 
-![Entity-Relationship Diagram](conceptual_Models/ER Download.jpg)
+conceptual_Models/ER Download.jpg
 ![Entity-Relationship Diagram](conceptual_Models/MySQL EER.png)
 
 This diagram shows the key entities such as Customer, Doctor, Pharmacy, and Order, along with their relationships and cardinality constraints.
